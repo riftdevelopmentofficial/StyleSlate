@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #fff;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+.btn-primary {
+  background-color: #7b61ff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #9a7bff;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid #555;
+  color: #ddd;
+}
+.btn-outline:hover {
+  background: #222;
+}
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+.glow-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(123, 97, 255, 0.3), transparent 60%),
+              radial-gradient(circle at 80% 30%, rgba(255, 120, 220, 0.2), transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulse 8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.6; }
+}
+.content {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav {
+    margin-top: 10px;
+  }
+}
